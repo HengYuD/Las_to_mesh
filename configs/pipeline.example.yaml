@@ -1,0 +1,14 @@
+input_las: data/floor01.las
+output_obj: outputs/floor01_slim.obj
+
+roi_bounds:
+  x_min: -100000.0
+  x_max: 100000.0
+  y_min: -100000.0
+  y_max: 100000.0
+  z_min: -1000.0
+  z_max: 1000.0
+
+voxel_size: 0.05
+z_floor_quantile: 0.02
+z_ceiling_quantile: 0.98

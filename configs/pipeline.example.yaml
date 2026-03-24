@@ -1,0 +1,31 @@
+input_las: data/floor01.las
+output_obj: outputs/floor01_slim.obj
+output_report_json: outputs/floor01_report.json
+
+roi:
+  include_boxes:
+    - x_min: -100000.0
+      x_max: 100000.0
+      y_min: -100000.0
+      y_max: 100000.0
+      z_min: -1000.0
+      z_max: 1000.0
+  exclude_boxes: []
+
+processing:
+  # Optional; set null to read all points.
+  load_max_points: null
+  # Large LAS can set stride=2/4/8 to speed up.
+  load_stride: 1
+  voxel_size: 0.05
+  outlier_radius: 0.15
+  outlier_min_neighbors: 3
+
+flattening:
+  z_floor_quantile: 0.02
+  z_ceiling_quantile: 0.98
+  flatten_band: 0.08
+
+mesh:
+  reconstruction: convex_hull
+  target_faces: 120000
